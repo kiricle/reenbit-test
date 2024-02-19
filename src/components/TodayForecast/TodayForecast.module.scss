@@ -1,0 +1,35 @@
+.container {
+    padding-block: 45% 30%;
+    background-color: #110E3B;
+    color: white;
+
+    display: grid;
+    justify-items: center;
+    gap: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.temp {
+    font-size: 50px;
+    font-weight: normal;
+    position: relative;
+
+    &::after {
+        content: "°C";
+        font-size: 20px;
+        font-weight: lighter;
+        position: absolute;
+        top: 0px;
+        right: -10px;
+    }
+}
+
+.city {
+    font-weight: normal;
+}

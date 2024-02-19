@@ -1,0 +1,21 @@
+.timer {
+    display: flex;
+    gap: 20px;
+}
+
+.number {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+}
+
+.measure {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
