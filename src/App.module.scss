@@ -2,7 +2,13 @@
     max-width: min(calc(100% - 30px), 1350px);
     margin-inline: auto;
     outline: black 1px;
-    padding-block: 15px;
     display: grid;
-    grid-template-columns: 1fr 30%;
+    grid-template-columns: 990px min-content;
+}
+
+.trip {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-block: 15px;
 }

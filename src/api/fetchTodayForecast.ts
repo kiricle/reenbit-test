@@ -15,8 +15,6 @@ export async function fetchTodayForecast(city: string): Promise<TodayForecast | 
 
         const result: TodayForecast = await response.json();
 
-        console.log(result);
-
         return result;
     } catch (error) {
         console.error(error);

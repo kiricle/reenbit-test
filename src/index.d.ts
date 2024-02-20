@@ -6,6 +6,16 @@ interface TodayForecast {
     ];
 }
 
+interface WeekForecast {
+    days: Array<WeekForecastDay>;
+}
+
+interface WeekForecastDay {
+    tempmax: number;
+    tempmin: number;
+    datetime: string;
+}
+
 interface Trip {
     city: string;
     startDate: Date;
