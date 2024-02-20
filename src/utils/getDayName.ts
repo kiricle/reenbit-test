@@ -1,13 +1,13 @@
-export function getTodayName() {
+export function getDayName(day: number) {
     const days = [
+        'Sunday',
         'Monday',
         'Tuesday',
         'Wednesday',
         'Thursday',
         'Friday',
         'Saturday',
-        'Sunday',
     ];
 
-    return days[new Date().getDay() - 1];
+     return days[day]; 
 }
