@@ -1,5 +1,6 @@
 import styles from './App.module.scss';
 import Img from './berlin.jpg';
+import { AddTrip } from './components/AddTrip/AddTrip';
 import { Logo } from './components/Logo/Logo';
 import { TodayForecast } from './components/TodayForecast/TodayForecast';
 import { TripCard } from './components/TripCard/TripCard';
@@ -13,10 +14,13 @@ function App() {
         <main className={styles.main}>
             <div className={styles.trip}>
                 <Logo />
-                <TripCard
-                    currentTrip={currentTrip}
-                    src={Img}
-                />
+                <div className={styles.trips}>
+                    <TripCard
+                        currentTrip={currentTrip}
+                        src={Img}
+                    />
+                    <AddTrip />
+                </div>
                 <TripForecast />
             </div>
             <TodayForecast />
