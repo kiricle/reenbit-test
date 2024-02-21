@@ -11,12 +11,11 @@ import { useInput } from './hooks/useInput';
 import { useTripStore } from './stores/tripStore';
 import { DateInput } from './ui/DateInput/DateInput';
 import { Select } from './ui/Select/Select';
+import { AddTripForm } from './components/AddTripForm/AddTripForm';
 
 function App() {
     const currentTrip = useTripStore((state) => state.currentTrip);
     const { close, show, visible } = useModal();
-    const [selected, onChange] = useInput('Please select a city');
-    const [startDate, onChangeStartDate] = useInput('');
 
     return (
         <main className={styles.main}>
@@ -34,28 +33,7 @@ function App() {
                         onClose={close}
                         onSubmit={close}
                     >
-                        <Select
-                            onChange={onChange}
-                            options={[
-                                { title: 'Berlin', value: 'Berlin' },
-                                { title: 'Dnipro', value: 'Dnipro' },
-                            ]}
-                            placeholder="Please select a city"
-                            label="Email"
-                            required
-                        />
-                        <DateInput
-                            label="Start Date"
-                            onChange={onChangeStartDate}
-                            value={startDate}
-                            required
-                        />
-                        <DateInput
-                            label="End Date"
-                            onChange={onChangeStartDate}
-                            value={startDate}
-                            required
-                        />
+                        <AddTripForm />
                     </ConfirmModal>
                 )}
                 <TripForecast />
