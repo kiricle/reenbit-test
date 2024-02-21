@@ -1,5 +1,5 @@
+import { ChangeEvent, SelectHTMLAttributes } from 'react';
 import styles from './Select.module.scss';
-import { ChangeEvent, SelectHTMLAttributes, useState } from 'react';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     label: string;
@@ -15,12 +15,12 @@ export const Select = ({
     options,
     label,
     placeholder,
+    required,
     ...props
 }: SelectProps) => {
-
     return (
         <label className={styles.label}>
-            {label}
+            <p className={required ? styles.required : ''}>{label}</p>
             <select
                 {...props}
                 onChange={onChange}

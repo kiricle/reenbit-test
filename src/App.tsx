@@ -7,16 +7,16 @@ import { TodayForecast } from './components/TodayForecast/TodayForecast';
 import { TripCard } from './components/TripCard/TripCard';
 import { TripForecast } from './components/WeekForecast/TripForecast';
 import { useModal } from './hooks/useModal';
-import { useSelect } from './hooks/useSelect';
+import { useInput } from './hooks/useInput';
 import { useTripStore } from './stores/tripStore';
+import { DateInput } from './ui/DateInput/DateInput';
 import { Select } from './ui/Select/Select';
 
 function App() {
     const currentTrip = useTripStore((state) => state.currentTrip);
     const { close, show, visible } = useModal();
-    const { onChange, selected } = useSelect('Please select a city');
-
-    console.log(selected)
+    const [selected, onChange] = useInput('Please select a city');
+    const [startDate, onChangeStartDate] = useInput('');
 
     return (
         <main className={styles.main}>
@@ -42,6 +42,19 @@ function App() {
                             ]}
                             placeholder="Please select a city"
                             label="Email"
+                            required
+                        />
+                        <DateInput
+                            label="Start Date"
+                            onChange={onChangeStartDate}
+                            value={startDate}
+                            required
+                        />
+                        <DateInput
+                            label="End Date"
+                            onChange={onChangeStartDate}
+                            value={startDate}
+                            required
                         />
                     </ConfirmModal>
                 )}
