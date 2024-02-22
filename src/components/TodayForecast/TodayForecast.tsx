@@ -4,6 +4,7 @@ import { useTripStore } from '../../stores/tripStore';
 import { getDayName } from '../../utils/getDayName';
 import { Timer } from './Timer/Timer';
 import styles from './TodayForecast.module.scss';
+import { getIcon } from '../../utils/getIcon';
 
 export const TodayForecast = () => {
     const currentTrip = useTripStore((state) => state.currentTrip);
@@ -27,7 +28,14 @@ export const TodayForecast = () => {
                 <h2 className={styles.day}>
                     {getDayName(new Date().getDay())}
                 </h2>
-                <h2 className={styles.temp}>{forecast.days[0].temp}</h2>
+                <div>
+                    <img
+                        src={getIcon(forecast.days[0].icon)}
+                        alt="icon"
+                    />
+                    <h2 className={styles.temp}>{forecast.days[0].temp}</h2>
+                </div>
+
                 <h2 className={styles.city}>{currentTrip.city}</h2>
             </div>
             <Timer start_date={currentTrip.startDate} />

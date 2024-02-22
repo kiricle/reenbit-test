@@ -7,5 +7,5 @@ export const useInput = (initial: string) => {
         setSelected(e.target.value);
     };
 
-    return [selected, onChange] as const;
+    return [selected, onChange, setSelected] as const;
 };

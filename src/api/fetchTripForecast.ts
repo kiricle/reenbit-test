@@ -20,8 +20,6 @@ export async function fetchTripForecast({
 
         const result: WeekForecast = await response.json();
 
-        console.log(result);
-
         return result;
     } catch (error) {
         console.log(error);

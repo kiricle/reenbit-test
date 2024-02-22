@@ -14,7 +14,6 @@ export const DateInput = ({
     required,
     ...props
 }: DateInputProps) => {
-    console.log(value);
 
     return (
         <label>

@@ -1,32 +1,33 @@
+import { useTripStore } from '../../stores/tripStore';
+import { formateDate } from '../../utils/formateDate';
+import { isSelected } from '../../utils/isSelected';
 import styles from './TripCard.module.scss';
 
-export const TripCard = ({
-    currentTrip,
-    src,
-}: {
-    src: string;
-    currentTrip: Trip;
-}) => {
-    const formatDate = (date: Date): string => {
-        const yyyy = date.getFullYear();
-        const mm = '0' + (date.getMonth() + 1);
-        const dd = '0' + date.getDate();
+export const TripCard = ({ trip }: { trip: Trip & City }) => {
+    const currentTrip = useTripStore((state) => state.currentTrip);
+    const setCurrentTrip = useTripStore((state) => state.setTrip);
 
-        return `${dd.slice(-2)}.${mm.slice(-2)}.${yyyy}`;
-    };
+    const selected = isSelected(trip, currentTrip);
 
     return (
-        <div className={styles.card}>
+        <div
+            className={styles.card}
+            onClick={() => setCurrentTrip(trip)}
+        >
             <img
                 className={styles.img}
-                src={src}
+                src={trip.src}
                 alt="some alt"
             />
-            <div className={styles.content}>
-                <h3 className={styles.name}>{currentTrip.city}</h3>
+            <div
+                className={[
+                    styles.content,
+                    selected ? styles.selected : '',
+                ].join(' ')}
+            >
+                <h3 className={styles.name}>{trip.city}</h3>
                 <p className={styles.date}>
-                    {formatDate(currentTrip.startDate)} -{' '}
-                    {formatDate(currentTrip.endDate)}
+                    {formateDate(trip.startDate)} - {formateDate(trip.endDate)}
                 </p>
             </div>
         </div>

@@ -26,18 +26,19 @@ export const Select = ({
                 onChange={onChange}
                 required
                 className={styles.select}
+                defaultValue={''}
             >
                 <option
                     className={styles.option}
-                    selected
                     disabled
                     hidden
-                    value={placeholder}
+                    value=""
                 >
                     {placeholder}
                 </option>
                 {options.map(({ title, value }) => (
                     <option
+                        className={styles.option}
                         value={value}
                         key={value}
                     >

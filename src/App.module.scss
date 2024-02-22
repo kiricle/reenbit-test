@@ -16,4 +16,6 @@
 .trips {
     display: flex;
     gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
