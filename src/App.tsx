@@ -12,6 +12,8 @@ function App() {
     const { close, show, visible } = useModal();
     const userTrips = useTripStore((state) => state.userTrips);
 
+    userTrips.sort((a, b) => a.startDate.getTime() - b.startDate.getTime());
+
     return (
         <main className={styles.main}>
             <div className={styles.trip}>
