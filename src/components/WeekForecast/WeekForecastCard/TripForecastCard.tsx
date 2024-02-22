@@ -1,10 +1,12 @@
 import { getDayName } from '../../../utils/getDayName';
+import { getIcon } from '../../../utils/getIcon';
 import styles from './TripForecastCard.module.scss';
 
 export const TripForecastCard = ({
     datetime,
     tempmax,
     tempmin,
+    icon
 }: WeekForecastDay) => {
     return (
         <div className={styles.card}>
@@ -13,7 +15,7 @@ export const TripForecastCard = ({
             </h3>
             <img
                 className={styles.img}
-                src="#"
+                src={getIcon(icon)}
                 alt="#"
             />
             <p className={styles.temp}>

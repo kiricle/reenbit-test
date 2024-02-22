@@ -1,5 +1,6 @@
 .card {
-    max-width: 220px;
+    width: 220px;
+    min-width: 220px;
     display: flex;
     flex-direction: column;
 
@@ -12,10 +13,14 @@
     }
 }
 
+.selected {
+    outline: 3px solid #C1E0FF;
+}
+
 .img {
     width: 100%;
     aspect-ratio: 1.05 / 1;
-    background-color: red;
+    object-fit: cover;
 }
 
 .content {
