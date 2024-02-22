@@ -1,0 +1,42 @@
+.card {
+    width: 220px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        cursor: pointer;
+
+        .content {
+            outline: 2px solid #C1E0FF;
+        }
+    }
+}
+
+.selected {
+    outline: 3px solid #C1E0FF;
+}
+
+.img {
+    width: 100%;
+    aspect-ratio: 1.05 / 1;
+    object-fit: cover;
+}
+
+.content {
+    border: 1px solid #d4d4d4;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.date {
+    font-size: 14px;
+    color: gray;
+}

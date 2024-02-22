@@ -1,0 +1,32 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 18px;
+}
+
+.select {
+    border: 1px solid #DADADA;
+    padding: 10px;
+    font-size: 20px;
+    color: #9b9b9b;
+    margin-top: 15px;
+    
+    &:valid {
+        color: black;
+    }
+}
+
+.option {
+    color: black;
+}
+
+.required {
+    &::after {
+        content: '*';
+        color: red;
+        position: absolute;
+        left: -10px;
+        top: 0px;
+    }
+}

@@ -1,0 +1,44 @@
+.date {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+
+    &:focus {
+        color: #bbbaba;
+
+        &::before {
+            content: "";
+        }
+    }
+
+    &:valid {
+        color: black;
+
+        &::before {
+            content: "";
+        }
+    }
+
+    &::before {
+        color: lightgray;
+        content: attr(placeholder);
+    }
+}
+
+.label {
+    font-size: 18px;
+}
+
+.required {
+    position: relative;
+
+    &::after {
+        content: '*';
+        color: red;
+        position: absolute;
+        left: -10px;
+        top: 0px;
+    }
+}
